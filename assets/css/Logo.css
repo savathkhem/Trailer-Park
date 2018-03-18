@@ -274,5 +274,34 @@ p a:hover {
 }
 
 #logo {
-  padding: 20px;
+  padding-left: 20px;
+  margin-bottom: 5px;
+  margin-top: 25px;
+}
+
+/* button */
+ 
+.btn {
+  text-decoration: none;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  transition: all 0.5s;
+}
+ 
+.btn {
+  background: #FF1177;
+  /* background: #fff; */
+  /* font-family: Monoton; */
+  -webkit-animation: neon1 .25s ease-in-out infinite alternate;
+  -moz-animation: neon1 .25s ease-in-out infinite alternate;
+  animation: neon1 .25s ease-in-out infinite alternate;
+}
+ 
+.btn:hover {
+  /* background: #FF1177; */
+  background: #fff;
+  color: #FF1177;
+  -webkit-animation: none;
+  -moz-animation: none;
+  animation: none;
 }
