@@ -273,6 +273,6 @@ p a:hover {
   }
 }
 
-/* #logo {
-  border-left-width: 20px;
-} */
+#logo {
+  padding: 20px;
+}
