@@ -2,7 +2,38 @@ body {
     background-image: url("../images/bg1.png");
 }
 
-.btn {
+/* .btn {
     color: white;
+} */
+
+/* .card {
+    width: 250px;
+    height: 400px;
+} */
+
+.card .card-content {
+    padding: 0px;
 }
 
+#modal-btn-container {
+    width: 100%;
+    margin: 0;
+    background:#FF1177
+}
+
+#modal-btn {
+    width: 80%;
+    font: 1em;
+    padding:0;
+    padding-left:3px;
+    text-align: left;
+}
+
+#more-vert-btn {
+    margin-left: 0px;
+    background:#FF1177
+}
+
+/* #poster-div {
+    float:left;
+} */
