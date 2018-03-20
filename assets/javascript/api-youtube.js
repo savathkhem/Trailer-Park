@@ -5,11 +5,12 @@ $(document).ready(function(){
 
     var testPlaylistId = 'PLBCF2DAC6FFB574DE'
 
+    var trailersPlaylistId = 'PLScC8g4bqD47o9Fw9fqQF0ToZpO5OIJ6_'
 
     $("#test1").on("click",function(){
       console.log('test1 clicked!')
       $.ajax({
-        url: "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet,contentDetails&maxResults=10&playlistId="+testPlaylistId+"&key="+apiKey,
+        url: "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet,contentDetails&maxResults=10&playlistId="+trailersPlaylistId+"&key="+apiKey,
         type: "GET",
       }).then(function(response) {
         console.log(response);
@@ -23,48 +24,5 @@ $(document).ready(function(){
         }
       });
     })
-
-    // var tag = document.createElement('script');
-
-    // tag.src = "https://www.youtube.com/iframe_api";
-    // var firstScriptTag = document.getElementsByTagName('script')[0];
-    // firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-    // 3. This function creates an <iframe> (and YouTube player)
-    //    after the API code downloads.
-    // var player;
-    // function onYouTubeIframeAPIReady() {
-    //   player = new YT.Player('player', {
-    //     height: '390',
-    //     width: '640',
-    //     videoId: 'M7lc1UVf-VE',
-    //     events: {
-    //       'onReady': onPlayerReady,
-    //       'onStateChange': onPlayerStateChange
-    //     }
-    //   });
-    // }
-
-    // 4. The API will call this function when the video player is ready.
-
-    // function onPlayerReady(event) {
-    //   event.target.playVideo();
-    // }
-
-    // 5. The API calls this function when the player's state changes.
-    //    The function indicates that when playing a video (state=1),
-    //    the player should play for six seconds and then stop.
-    
-    // var done = false;
-    // function onPlayerStateChange(event) {
-    //   if (event.data == YT.PlayerState.PLAYING && !done) {
-    //     setTimeout(stopVideo, 6000);
-    //     done = true;
-    //   }
-    // }
-    // function stopVideo() {
-    //   player.stopVideo();
-    // }
-
 
 });
