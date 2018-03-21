@@ -34,6 +34,13 @@ body {
     background:#FF1177
 }
 
-/* #poster-div {
-    float:left;
-} */
+#poster-div {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.poster-container{
+    width:10%;
+    display: inline-block;
+    margin: 10px;
+}
