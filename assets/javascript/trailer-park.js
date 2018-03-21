@@ -12,4 +12,3 @@ $('.modal').modal({
     complete: function() {} // Callback for Modal close
   }
   );
-    

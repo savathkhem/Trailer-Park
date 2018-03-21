@@ -40,40 +40,38 @@ $(document).ready(function () {
       console.log(response.results[0].poster_path)
       for (var i = 0; i < response.results.length; i++) {
         console.log(response.results[i].title)
-        var posterImg =
-          `<div class = "poster-container">
+        var posterImg =`
+        <div class="poster-container">
           <div class="card">
-                <div class="card-image waves-effect waves-block waves-light">
-                    <img class="activator responsive-img movie-poster" data-title = "${response.results[i].title}" src="${tmdbImgUrl}${response.results[i].poster_path}">
+            <div class="card-image waves-effect waves-block waves-light">
+              <img class="modal-trigger" data-title = "${response.results[i].title}" src="${tmdbImgUrl}${response.results[i].poster_path}" href="#modal${i}">
+            </div>
+            <div class="card-content">
+              <span class="card-title activator grey-text text-darken-4">
+                <div id="modal-btn-container">
+                <a id="modal-btn" class="waves-effect waves-light btn modal-trigger" href="#modal${i}">${response.results[i].title}</a>
+                <i id="more-vert-btn" class="material-icons right">more_vert</i>
                 </div>
-                <div class="card-content">
-                    <span class="card-title activator grey-text text-darken-4">
-                        <div id="modal-btn-container" class="container">
-                            <a id="modal-btn" class="waves-effect waves-light btn modal-trigger" href="#modal1">Black Panther</a>
-                            <!-- Modal Structure -->
-                            <div id="modal1" class="modal modal-fixed-footer">
-                                <div class="modal-content">
-                                    <h4>Modal Header</h4>
-                                    <p>A bunch of text</p>
-                                </div>
-                                <div class="modal-footer">
-                                    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a>
-                                </div>
-                            </div>
-                            <i id="more-vert-btn" class="material-icons right">more_vert</i>
-                    </span>
-                    </div>
-                </div>
-                <div class="card-reveal">
-                    <span class="card-title grey-text text-darken-4">Card Title
-                        <i class="material-icons right">close</i>
-                    </span>
-                    <p>Here is some more information about this product that is only revealed once clicked on.</p>
-                </div>
-              </div>
-        </div>`;
+              </span>
+            </div>
+            <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+                <p>Here is some more information about this product that is only revealed once clicked on.</p>
+            </div>
+          </div>
+        </div>
+    
+      <!-- Modal Structure -->
+      <div id="modal${i}" class="modal modal-fixed-footer">
+        <div class="modal-content">
+          <h4>Modal Header</h4>
+          <p>A bunch of text</p>
+        </div>
+        <div class="modal-footer">
+          <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a>
+        </div>
+      </div>`;
 
-        console.log(posterImg)
         $("#videos-display").prepend(posterImg)
         titlesArr.push(response.results[i].title)
       }
