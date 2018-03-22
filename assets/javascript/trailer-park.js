@@ -9,6 +9,6 @@ $('.modal').modal({
     //   alert("Ready");
       console.log(modal, trigger);
     },
-    complete: function() {} // Callback for Modal close
+    complete: function() {$('.modal-content').empty();} // Callback for Modal close
   }
   );

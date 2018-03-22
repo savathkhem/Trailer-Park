@@ -6,24 +6,6 @@ $(document).ready(function () {
   var trailersPlaylistId = 'PLScC8g4bqD47o9Fw9fqQF0ToZpO5OIJ6_'
 
   $("#test1").on("click", function () {
-    console.log('test1 clicked!')
-    $.ajax({
-      url: "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet,contentDetails&maxResults=10&playlistId=" + trailersPlaylistId + "&key=" + apiKey,
-      type: "GET",
-    }).then(function (response) {
-      console.log(response);
-      console.log(response.items)
-      for (i = 0; i < response.items.length; i++) {
-        console.log(response.items[i])
-        var videoId = response.items[i].contentDetails.videoId
-        var baseUrl = 'https://www.youtube.com/embed/'
-        var embedVideo = `<iframe id="ytplayer" type="text/html" width="640" height="360"src="${baseUrl + videoId}"></iframe>`;
-        $("#videos-display").prepend(embedVideo)
-      }
-    });
-  })
-
-  $("#test2").on("click", function () {
     console.log('test2 clicked!')
 
     var omdbURL = "https://api.themoviedb.org/3/movie/now_playing?api_key=0c9ebd7d6e76fc10f179166f9acd0665&language=en-US&page=1";
@@ -44,36 +26,27 @@ $(document).ready(function () {
         <div class="poster-container">
           <div class="card">
             <div class="card-image waves-effect waves-block waves-light">
-              <img class="modal-trigger" data-title = "${response.results[i].title}" src="${tmdbImgUrl}${response.results[i].poster_path}" href="#modal${i}">
+              <img class="modal-trigger movie-poster" data-title = "${response.results[i].title}" src="${tmdbImgUrl}${response.results[i].poster_path}" href="#modal1">
             </div>
             <div class="card-content">
               <span class="card-title activator grey-text text-darken-4">
                 <div id="modal-btn-container">
-                <a id="modal-btn" class="waves-effect waves-light btn modal-trigger" href="#modal${i}">${response.results[i].title}</a>
+                <a id="modal-btn" class="waves-effect waves-light btn modal-trigger" href="#modal1">${response.results[i].title}</a>
                 <i id="more-vert-btn" class="material-icons right">more_vert</i>
                 </div>
               </span>
             </div>
             <div class="card-reveal">
                 <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-                <p>Here is some more information about this product that is only revealed once clicked on.</p>
+                <p>${response.results[i].title}Here is some more information about this product that is only revealed once clicked on.</p>
             </div>
           </div>
-        </div>
-    
-      <!-- Modal Structure -->
-      <div id="modal${i}" class="modal modal-fixed-footer">
-        <div class="modal-content">
-          <h4>Modal Header</h4>
-          <p>A bunch of text</p>
-        </div>
-        <div class="modal-footer">
-          <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a>
-        </div>
-      </div>`;
+        </div>`;
 
-        $("#videos-display").prepend(posterImg)
+
+        $("#videos-display").append(posterImg)
         titlesArr.push(response.results[i].title)
+        //$("body").append(modals);
       }
     })
   })
@@ -85,7 +58,7 @@ $(document).ready(function () {
     var queryTitle = parsedTitle.toLowerCase();
     console.log(queryTitle)
     $.ajax({
-      url: `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${queryTitle}+official+trailer&maxResults=3&key=${apiKey}`,
+      url: `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${queryTitle}+official+trailer&maxResults=1&key=${apiKey}`,
       type: "GET",
     }).then(function (response) {
       console.log(response);
@@ -95,7 +68,7 @@ $(document).ready(function () {
         var videoId = response.items[i].id.videoId
         var baseUrl = 'https://www.youtube.com/embed/'
         var embedVideo = `<iframe id="ytplayer" type="text/html" width="640" height="360"src="${baseUrl + videoId}"></iframe>`;
-        $("#videos-display").prepend(embedVideo)
+        $("#modal1").html(embedVideo)
       }
     });
   })

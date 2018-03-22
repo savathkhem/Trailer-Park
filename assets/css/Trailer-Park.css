@@ -34,10 +34,6 @@ body {
     background:#FF1177
 }
 
-#poster-div {
-    display: flex;
-    justify-content: flex-start;
-}
 
 .poster-container{
     width:20%;
