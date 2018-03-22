@@ -36,9 +36,9 @@ $(document).ready(function () {
                 </div>
               </span>
             </div>
-            <div class="card-reveal">
-                <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-                <p>${response.results[i].title}Here is some more information about this product that is only revealed once clicked on.</p>
+            <div id = "${response.results[i].title}" class="card-reveal">
+                <span class="card-title grey-text text-darken-4">${response.results[i].title}<i class="material-icons right">close</i></span>
+                <p>${response.results[i].overview}</p>
             </div>
           </div>
         </div>`;
@@ -58,7 +58,7 @@ $(document).ready(function () {
     var queryTitle = parsedTitle.toLowerCase();
     console.log(queryTitle)
     $.ajax({
-      url: `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${queryTitle}+official+trailer&maxResults=1&key=${apiKey}`,
+      url: `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${queryTitle}+official+trailer&maxResults=3&key=${apiKey}`,
       type: "GET",
     }).then(function (response) {
       console.log(response);
@@ -68,7 +68,7 @@ $(document).ready(function () {
         var videoId = response.items[i].id.videoId
         var baseUrl = 'https://www.youtube.com/embed/'
         var embedVideo = `<iframe id="ytplayer" type="text/html" width="640" height="360"src="${baseUrl + videoId}"></iframe>`;
-        $("#modal1").html(embedVideo)
+        $("#modal1").append(embedVideo)
       }
     });
   })
