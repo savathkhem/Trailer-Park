@@ -3,7 +3,9 @@ $(document).ready(function () {
 
   var movieTrailersId = 'UC3gNmTGu-TTbFPpfSs5kNkg';
 
-  var trailersPlaylistId = 'PLScC8g4bqD47o9Fw9fqQF0ToZpO5OIJ6_'
+  var trailersPlaylistId = 'PLScC8g4bqD47o9Fw9fqQF0ToZpO5OIJ6_';
+
+  var huluPlaylistId = "PLviBkls1C5CJAIIV5WbwZZrsYaPERbbBJ";
 
   $("#test1").on("click", function () {
     console.log('test2 clicked!')
@@ -14,6 +16,7 @@ $(document).ready(function () {
     var tmdbImgUrl = 'https://image.tmdb.org/t/p/w185'
     console.log(omdbURL);
 
+    //Populates what's in theaters
     $.ajax({
       url: omdbURL,
       method: "GET"
@@ -51,6 +54,7 @@ $(document).ready(function () {
     })
   })
 
+  //Click a poster, get the trailers in a modal!
   $(document).on("click", '.movie-poster', function () {
     var movieTitle = $(this).data('title');
     console.log(movieTitle);
