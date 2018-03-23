@@ -8,6 +8,13 @@
   <!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
 
+
+  <!-- FIREBASE -->
+  <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+  <!-- OAUTH STUFF -->
+  <script src = "assets/javascript/oauth.js"></script>
+  <script src="https://smartlock.google.com/client"></script>
+
   <!-- jquery -->
   <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
   <!-- Compiled and minified JavaScript -->
@@ -49,7 +56,7 @@
     <li><a class="btn-floating tooltipped green" data-position="bottom" data-delay="50" data-tooltip="Whats New!"><i class="material-icons">fiber_new</i></a></li>
     <li><a class="btn-floating tooltipped blue" data-position="bottom" data-delay="50" data-tooltip="Kid Friendly"><i class="material-icons">face</i></a></li>
     <li><a class="btn-floating tooltipped yellow darken-1" data-position="bottom" data-delay="50" data-tooltip="Starred"><i class="material-icons">star_border</i></a></li>
-    <li><a class="btn-floating tooltipped purple" data-position="bottom" data-delay="50" data-tooltip="Login/Sign-Up"><i class="material-icons">account_circle</i></a></li>
+    <li><a class="btn-floating tooltipped purple modal-trigger" href="#modal2" data-position="bottom" data-delay="50" data-tooltip="Login/Sign-Up"><i class="material-icons">account_circle</i></a></li>
     <li>
     <form>
       <div class="input-field" style="position:relative;right:-65px;top:14px; background:#ff11778a; border-radius:5px">
@@ -61,7 +68,6 @@
     </li>
   </ul>
 </div>
-
 
 <!-- BUTTONS AREA-->
 <!-- POSSIBLE DYNAMIC BUTTON CREATION FUNCTION -->
@@ -88,6 +94,17 @@
       <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a>
     </div> -->
   </div>
+
+  <!-- Modal Structure -->
+  <div id="modal2" class="modal modal-fixed-footer scrollspy">
+      <div id = "video-modal"class="modal-content">
+        <h4>Modal Header</h4>
+        <p>A bunch of text</p>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a>
+      </div>
+    </div>
 <!-- ////////////// -->
 
   
