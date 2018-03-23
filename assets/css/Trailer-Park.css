@@ -18,7 +18,7 @@ body {
 #modal-btn-container {
     width: 100%;
     margin: 0;
-    background:#FF1177
+    background:#FF1177;
 }
 
 #modal-btn {
@@ -39,4 +39,14 @@ body {
     width:20%;
     display: inline-block;
     margin: 10px;
+}
+
+.modal {
+    background-color: unset;
+    overflow-y: scroll;
+    text-align: center;
+}
+
+::-webkit-scrollbar { 
+    display: none; 
 }

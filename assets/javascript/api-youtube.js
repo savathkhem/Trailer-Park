@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  var apiKey = 'AIzaSyB7BePjH92WwSeZl2wQPVJQ8ZDeoFtbeYs'
+  var apiKey = 'AIzaSyB7BePjH92WwSeZl2wQPVJQ8ZDeoFtbeYs';
 
   var movieTrailersId = 'UC3gNmTGu-TTbFPpfSs5kNkg';
 
@@ -17,15 +17,19 @@ $(document).ready(function () {
     console.log('clicked!')
     $("#videos-display").empty();
     var titlesArr = [];
+    var tmdbApiKey = 'api_key=0c9ebd7d6e76fc10f179166f9acd0665';
+    var tmdbImgUrl = 'https://image.tmdb.org/t/p/w185';
+    console.log(omdbURL);
+
     //Populates what's in theaters
     $.ajax({
       url: moviesURL,
       method: "GET"
     }).then(function (response) {
       console.log(response);
-      console.log(response.results[0].poster_path)
+      console.log(response.results[0].poster_path);
       for (var i = 0; i < response.results.length; i++) {
-        console.log(response.results[i].title)
+        console.log(response.results[i].title);
         var posterImg =`
         <div class="poster-container">
           <div class="card">
@@ -50,8 +54,8 @@ $(document).ready(function () {
         $("#videos-display").append(posterImg)
         titlesArr.push(response.results[i].title)
       }
-    })
-  })
+    });
+  });
 
     //Popular on TV
     $("#test3").on("click", function () {
@@ -100,21 +104,21 @@ $(document).ready(function () {
     console.log(movieTitle);
     var parsedTitle = movieTitle.replace(/\s/g, "+");
     var queryTitle = parsedTitle.toLowerCase();
-    console.log(queryTitle)
+    console.log(queryTitle);
     $.ajax({
       url: `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${queryTitle}+official+trailer&maxResults=3&key=${apiKey}`,
       type: "GET",
     }).then(function (response) {
       console.log(response);
-      console.log(response.items)
+      console.log(response.items);
       for (i = 0; i < response.items.length; i++) {
-        console.log(response.items[i])
-        var videoId = response.items[i].id.videoId
-        var baseUrl = 'https://www.youtube.com/embed/'
+        console.log(response.items[i]);
+        var videoId = response.items[i].id.videoId;
+        var baseUrl = 'https://www.youtube.com/embed/';
         var embedVideo = `<iframe id="ytplayer" type="text/html" width="640" height="360"src="${baseUrl + videoId}"></iframe>`;
-        $("#modal1").append(embedVideo)
+        $("#modal1").append(embedVideo);
       }
     });
-  })
+  });
 
 });
