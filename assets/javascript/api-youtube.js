@@ -7,18 +7,19 @@ $(document).ready(function () {
 
   var huluPlaylistId = "PLviBkls1C5CJAIIV5WbwZZrsYaPERbbBJ";
 
+  var tmdbApiKey = 'api_key=0c9ebd7d6e76fc10f179166f9acd0665'
+  var tmdbImgUrl = 'https://image.tmdb.org/t/p/w185'
+  var topTvURL = "https://api.themoviedb.org/3/tv/popular?api_key=0c9ebd7d6e76fc10f179166f9acd0665&language=en-US"
+  var moviesURL = "https://api.themoviedb.org/3/movie/now_playing?api_key=0c9ebd7d6e76fc10f179166f9acd0665&language=en-US&page=1";
+
+  //In Theaters Now
   $("#test1").on("click", function () {
-    console.log('test2 clicked!')
-
-    var omdbURL = "https://api.themoviedb.org/3/movie/now_playing?api_key=0c9ebd7d6e76fc10f179166f9acd0665&language=en-US&page=1";
+    console.log('clicked!')
+    $("#videos-display").empty();
     var titlesArr = [];
-    var tmdbApiKey = 'api_key=0c9ebd7d6e76fc10f179166f9acd0665'
-    var tmdbImgUrl = 'https://image.tmdb.org/t/p/w185'
-    console.log(omdbURL);
-
     //Populates what's in theaters
     $.ajax({
-      url: omdbURL,
+      url: moviesURL,
       method: "GET"
     }).then(function (response) {
       console.log(response);
@@ -46,14 +47,53 @@ $(document).ready(function () {
           </div>
         </div>`;
 
-
         $("#videos-display").append(posterImg)
         titlesArr.push(response.results[i].title)
-        //$("body").append(modals);
       }
     })
   })
 
+    //Popular on TV
+    $("#test3").on("click", function () {
+      console.log('test3 clicked!')
+      $("#videos-display").empty();
+      //Populates what's in theaters
+      $.ajax({
+        url: topTvURL,
+        method: "GET"
+      }).then(function (response) {
+        console.log(response);
+        console.log(response.results[0].poster_path)
+        for (var i = 0; i < response.results.length; i++) {
+          console.log(response.results[i].title)
+          var posterImg =`
+          <div class="poster-container">
+            <div class="card">
+              <div class="card-image waves-effect waves-block waves-light">
+                <img class="modal-trigger movie-poster" data-title = "${response.results[i].name}" src="${tmdbImgUrl}${response.results[i].poster_path}" href="#modal1">
+              </div>
+              <div class="card-content">
+                <span class="card-title activator grey-text text-darken-4">
+                  <div id="modal-btn-container">
+                  <a id="modal-btn" class="waves-effect waves-light btn modal-trigger" href="#modal1">${response.results[i].name}</a>
+                  <i id="more-vert-btn" class="material-icons right">more_vert</i>
+                  </div>
+                </span>
+              </div>
+              <div id = "${response.results[i].title}" class="card-reveal">
+                  <span class="card-title grey-text text-darken-4">${response.results[i].title}<i class="material-icons right">close</i></span>
+                  <p>${response.results[i].overview}</p>
+              </div>
+            </div>
+          </div>`;
+  
+          $("#videos-display").append(posterImg)
+        }
+      })
+    })
+
+
+  
   //Click a poster, get the trailers in a modal!
   $(document).on("click", '.movie-poster', function () {
     var movieTitle = $(this).data('title');
