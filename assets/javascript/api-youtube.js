@@ -57,6 +57,7 @@ $(document).ready(function () {
   //Click a poster, get the trailers in a modal!
   $(document).on("click", '.movie-poster', function () {
     var movieTitle = $(this).data('title');
+    $('#modal1').empty();
     console.log(movieTitle);
     var parsedTitle = movieTitle.replace(/\s/g, "+");
     var queryTitle = parsedTitle.toLowerCase();
