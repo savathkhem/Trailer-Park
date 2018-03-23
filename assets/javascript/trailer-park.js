@@ -12,3 +12,6 @@ $('.modal').modal({
     complete: function() {$('.modal-content').empty();} // Callback for Modal close
   }
   );
+  $(document).ready(function(){
+    $('.scrollspy').scrollSpy();
+  });
