@@ -7,6 +7,8 @@ $(document).ready(function () {
 
   var huluPlaylistId = "PLviBkls1C5CJAIIV5WbwZZrsYaPERbbBJ";
 
+  var googleMaps = `<iframe width="700" height="550" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBCEE2nzor1sZUz0mC6-wKUXjQEEdEORbU&q=Movie+theaters+near+me" allowfullscreen></iframe>`;
+
   $("#test1").on("click", function () {
     console.log('test2 clicked!');
 
@@ -42,9 +44,16 @@ $(document).ready(function () {
             <div id = "${response.results[i].title}" class="card-reveal">
                 <span class="card-title grey-text text-darken-4">${response.results[i].title}<i class="material-icons right">close</i></span>
                 <p>${response.results[i].overview}</p>
+                <br>
+                <a id="maps" class="btn modal-trigger waves-effect waves-light" href="#modal1">Theaters Nearby</a>
             </div>
           </div>
         </div>`;
+
+        $("#maps").on("click", function() {
+          $("#modal1").empty();
+          $("#modal1").html(googleMaps);
+        });
 
 
         $("#videos-display").append(posterImg);
@@ -56,6 +65,7 @@ $(document).ready(function () {
 
   //Click a poster, get the trailers in a modal!
   $(document).on("click", '.movie-poster', function () {
+    $("#modal1").empty();
     var movieTitle = $(this).data('title');
     console.log(movieTitle);
     var parsedTitle = movieTitle.replace(/\s/g, "+");
