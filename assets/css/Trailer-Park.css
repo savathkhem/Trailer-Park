@@ -11,6 +11,9 @@ body {
     height: 400px;
 } */
 
+.container {
+    width: 85%;
+}
 .card .card-content {
     padding: 0px;
 }
@@ -34,10 +37,14 @@ body {
     background:#FF1177
 }
 
+#videos-display {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
 
 .poster-container{
     width:20%;
-    display: inline-block;
     margin: 10px;
 }
 
@@ -49,4 +56,18 @@ body {
 
 ::-webkit-scrollbar { 
     display: none; 
+}
+
+.stream-icon {
+    margin: 3px;
+    float: left;
+    width: 30%;
+}
+
+#maps {
+    font-size: 12px;
+}
+
+.streamable {
+    font-size: 10px; 
 }
