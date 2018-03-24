@@ -43,11 +43,12 @@ $(document).ready(function () {
       console.log(response.results[0].poster_path);
       for (var i = 0; i < response.results.length; i++) {
         console.log(response.results[i].title);
+        var posterPath = tmdbImgUrl + response.results[i].poster_path;
         var posterImg = `
         <div class="poster-container">
           <div class="card">
             <div class="card-image waves-effect waves-block waves-light">
-              <img class="modal-trigger movie-poster" data-title = "${response.results[i].title}" src="${tmdbImgUrl}${response.results[i].poster_path}" href="#modal1">
+              <img class="modal-trigger movie-poster" data-title = "${response.results[i].title}" src="${posterPath}" href="#modal1">
             </div>
             <div class="card-content">
               <span class="card-title activator grey-text text-darken-4">
@@ -93,11 +94,12 @@ $(document).ready(function () {
       console.log(response.results[0].poster_path);
       for (var i = 0; i < response.results.length; i++) {
         console.log(response.results[i].title);
+        var posterPath = tmdbImgUrl + response.results[i].poster_path;
         var posterImg = `
       <div class="poster-container">
         <div class="card">
           <div class="card-image waves-effect waves-block waves-light">
-            <img class="modal-trigger movie-poster" data-title = "${response.results[i].title}" src="${tmdbImgUrl}${response.results[i].poster_path}" href="#modal1">
+            <img class="modal-trigger movie-poster" data-title = "${response.results[i].title}" src="${posterPath}" href="#modal1">
           </div>
           <div class="card-content">
             <span class="card-title activator grey-text text-darken-4">
@@ -135,11 +137,12 @@ $(document).ready(function () {
       console.log(response.results[0].poster_path)
       for (var i = 0; i < response.results.length; i++) {
         console.log(response.results[i].title)
+        var posterPath = tmdbImgUrl + response.results[i].poster_path;
         var posterImg = `
           <div class="poster-container">
             <div class="card">
               <div class="card-image waves-effect waves-block waves-light">
-                <img class="modal-trigger movie-poster" data-title = "${response.results[i].name}" src="${tmdbImgUrl}${response.results[i].poster_path}" href="#modal1">
+                <img class="modal-trigger movie-poster" data-title = "${response.results[i].name}" src="${posterPath}" href="#modal1">
               </div>
               <div class="card-content">
                 <span class="card-title activator grey-text text-darken-4">
@@ -227,6 +230,7 @@ $(document).ready(function () {
     })
   });
 
+  //Search button functionality
   $('#search-btn').on("click", function (event) {
     event.preventDefault();
     var userSearch = $('#search').val();
@@ -275,24 +279,6 @@ $(document).ready(function () {
        
         $("#videos-display").append(posterImg)
 
-        console.log($('.movie-poster').attr('src'))
-        var movieImg = $('.movie-poster').attr('src')
-        var badImg = movieImg.includes("null");
-        if (badImg === true) {
-          console.log("null image");
-          console.log(badImg);
-          badImg.attr('src', "assets/images/bg1.png");
-        }
-
-        // console.log($('.movie-poster').attr('src'))
-        // var movieImg = (document).getElementsByClassName('movie-poster');
-        // var movieSrc = movieImg.getAttribute('src');
-        // var badSrc = movieSrc.includes('null');
-        // console.log (badSrc);
-
-        // if (badSrc === true) {
-        //   badSrc.setAttribute('src','assets/images/bg1.png')
-        // }
       }
 
     })
@@ -304,11 +290,12 @@ $(document).ready(function () {
       console.log(response.results[0].poster_path)
       for (var i = 0; i < response.results.length; i++) {
         console.log(response.results[i].name)
+        var posterPath = tmdbImgUrl + response.results[i].poster_path;
         var posterImg = `
           <div class="poster-container">
             <div class="card">
               <div class="card-image waves-effect waves-block waves-light">
-                <img class="modal-trigger movie-poster" data-title = "${response.results[i].name}" src="${tmdbImgUrl}${response.results[i].poster_path}" href="#modal1">
+                <img class="modal-trigger movie-poster" data-title = "${response.results[i].name}" src="${posterPath}" href="#modal1">
               </div>
               <div class="card-content">
                 <span class="card-title activator grey-text text-darken-4">
@@ -328,12 +315,6 @@ $(document).ready(function () {
             </div>
           </div>`;
 
-        // console.log('bad image check')
-        // console.log($('.movie-poster').attr('src'))
-        // if ($(".movie-poster").attr('src').includes("null")) {
-        //   console.log("null image")
-        //   $('.movie-poster').includes("null").attr('src', "assets/images/bg1.png");
-        // }
         $("#videos-display").append(posterImg);
       }
 
