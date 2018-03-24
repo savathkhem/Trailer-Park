@@ -6,7 +6,7 @@ var settings = {
     "method": "GET",
     "headers": {},
     "data": "{}"
-  }
+  };
   
   $.ajax(settings).done(function (response) {
     console.log(response);
