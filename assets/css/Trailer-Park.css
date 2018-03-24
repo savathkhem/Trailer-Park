@@ -34,6 +34,9 @@ body {
     background:#FF1177
 }
 
-/* #poster-div {
-    float:left;
-} */
+
+.poster-container{
+    width:20%;
+    display: inline-block;
+    margin: 10px;
+}

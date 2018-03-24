@@ -1,134 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-
-    <!-- jquery -->
-    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-    <!-- <script src="assets/javascript/materialize.js"></script> -->
-    <script src="assets/javascript/api-youtube.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
   <!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
 
-    <link rel="stylesheet" type="text/css" href="assets/css/Trailer-Park.css">
-    <link href="https://fonts.googleapis.com/css?family=Monoton" rel="stylesheet">
+  <!-- jquery -->
+  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+  <!-- <script src="assets/javascript/materialize.js"></script> -->
+  <script src = "assets/javascript/api-youtube.js"></script>
 
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="assets/css/Logo.css">
 
-    <title>Trailer Parks</title>
+  <link rel="stylesheet" type="text/css" href="assets/css/Trailer-Park.css">
+  <link href="https://fonts.googleapis.com/css?family=Monoton" rel="stylesheet">
 
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="assets/css/Logo.css">
+        
+  <title>Trailer Park</title>
+    
 </head>
-
 <body>
-    <!-- HEADER/NAVBAR -->
-    <nav class="nav-extended grey darken-3">
-        <div class="nav-wrapper">
-            <p id="logo">
-                <a href="Trailer-Park.html">Trailer Park</a>
-            </p>
-            <a href="#" data-activates="mobile-demo" class="button-collapse">
-                <i class="material-icons">menu</i>
-            </a>
-    </nav>
-
-    <!-- MENU SECTION -->
-    <!-- POSSIBLE SEARCH BAR AREA-->
-    <div class="fixed-action-btn horizontal click-to-toggle" id="linkBack" style="position:absolute;right:5px;top:5px">
-        <a class="btn-floating btn-large waves-effect waves-light" style="background:#FF1177">
-            <i class="material-icons">menu</i>
-        </a>
-        <ul>
-            <li>
-                <a class="btn-floating tooltipped red" data-position="bottom" data-delay="50" data-tooltip="Whats Hot!">
-                    <i class="material-icons">whatshot</i>
-                </a>
-            </li>
-            <li>
-                <a class="btn-floating tooltipped green" data-position="bottom" data-delay="50" data-tooltip="Whats New!">
-                    <i class="material-icons">fiber_new</i>
-                </a>
-            </li>
-            <li>
-                <a class="btn-floating tooltipped blue" data-position="bottom" data-delay="50" data-tooltip="Kid Friendly">
-                    <i class="material-icons">face</i>
-                </a>
-            </li>
-            <li>
-                <a class="btn-floating tooltipped yellow darken-1" data-position="bottom" data-delay="50" data-tooltip="Starred">
-                    <i class="material-icons">star_border</i>
-                </a>
-            </li>
-            <li>
-                <a class="btn-floating tooltipped purple" data-position="bottom" data-delay="50" data-tooltip="Login/Sign-Up">
-                    <i class="material-icons">account_circle</i>
-                </a>
-            </li>
-
-        </ul>
-    </div>
 
 
-    <!-- BUTTONS AREA-->
-    <!-- POSSIBLE DYNAMIC BUTTON CREATION FUNCTION -->
-    <!-- ADD RESPONSIVENESS TO BUTTONS -->
-    <div id="test1" class="col s12 btn waves-effect waves-light">In Theaters</div>
-    <div id="test2" class="col s12 btn waves-effect waves-light">Top Netflix</div>
-    <div id="test3" class="col s12 btn waves-effect waves-light">Top Movies</div>
-    <div id="test4" class="col s12 btn waves-effect waves-light">Top TV-Shows</div>
+<!-- HEADER/NAVBAR -->
+<nav class="nav-extended grey darken-3">
+  <div class="nav-wrapper">
+    <p id="logo"><a href="Trailer-Park.html">Trailer Park</a></p>
+    <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+  </div>
+</nav>
 
-    <!-- ADD STAGING AREA FOR DYNAMIC VIDEO TRAILER AREA -->
+<!-- MENU SECTION -->
+<!-- POSSIBLE SEARCH BAR AREA-->
+<div class="fixed-action-btn horizontal click-to-toggle" id="linkBack" style="position:absolute;right:5px;top:5px">
+  <a class="btn-floating btn-large waves-effect waves-light" style="background:#FF1177">
+    <i class="material-icons">menu</i>
+  </a>
+  <ul>
+    <li><a class="btn-floating tooltipped red" data-position="bottom" data-delay="50" data-tooltip="Whats Hot!"><i class="material-icons">whatshot</i></a></li>
+    <li><a class="btn-floating tooltipped green" data-position="bottom" data-delay="50" data-tooltip="Whats New!"><i class="material-icons">fiber_new</i></a></li>
+    <li><a class="btn-floating tooltipped blue" data-position="bottom" data-delay="50" data-tooltip="Kid Friendly"><i class="material-icons">face</i></a></li>
+    <li><a class="btn-floating tooltipped yellow darken-1" data-position="bottom" data-delay="50" data-tooltip="Starred"><i class="material-icons">star_border</i></a></li>
+    <li><a class="btn-floating tooltipped purple" data-position="bottom" data-delay="50" data-tooltip="Login/Sign-Up"><i class="material-icons">account_circle</i></a></li>
 
-    <!-- Modal Trigger -->
-    <hr>
-    <!--Testing Purposes <------ Remove This hr Later-->
-
-    <div id="poster-div" class="row">
-        <div class="col s12 m2">
-            <div class="card">
-                <div class="card-image waves-effect waves-block waves-light">
-                    <img class="activator" src="https://ia.media-imdb.com/images/M/MV5BMTg1MTY2MjYzNV5BMl5BanBnXkFtZTgwMTc4NTMwNDI@._V1_SY1000_CR0,0,674,1000_AL_.jpg">
-                </div>
-                <div class="card-content">
-                    <span class="card-title activator grey-text text-darken-4">
-                        <div id="modal-btn-container" class="container">
-                            <a id="modal-btn" class="waves-effect waves-light btn modal-trigger" href="#modal1">Black Panther</a>
-                            <!-- Modal Structure -->
-                            <div id="modal1" class="modal modal-fixed-footer">
-                                <div class="modal-content">
-                                    <h4>Modal Header</h4>
-                                    <p>A bunch of text</p>
-                                </div>
-                                <div class="modal-footer">
-                                    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a>
-                                </div>
-                            </div>
-                            <i id="more-vert-btn" class="material-icons right">more_vert</i>
-                    </span>
-                    </div>
-                </div>
-                <div class="card-reveal">
-                    <span class="card-title grey-text text-darken-4">Card Title
-                        <i class="material-icons right">close</i>
-                    </span>
-                    <p>Here is some more information about this product that is only revealed once clicked on.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div id="videos-display"></div>
+  </ul>
+</div>
 
 
+<!-- BUTTONS AREA-->
+<!-- POSSIBLE DYNAMIC BUTTON CREATION FUNCTION -->
+<!-- ADD RESPONSIVENESS TO BUTTONS -->
+<div id="test1" class="col s12 btn waves-effect waves-light">In Theaters</div>
+<div id="test2" class="col s12 btn waves-effect waves-light">Top Netflix</div>
+<div id="test3" class="col s12 btn waves-effect waves-light">Top Movies</div>
+<div id="test4" class="col s12 btn waves-effect waves-light">Top TV-Shows</div>
+
+  <!-- ADD STAGING AREA FOR DYNAMIC VIDEO TRAILER AREA -->
+
+<!-- Modal Trigger -->
+<hr> <!--Testing Purposes <------ Remove This hr Later-->
+
+<!-- ///////newstuff/////////// -->
+<div id = "videos-display"></div>
+
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal modal-fixed-footer">
+    <!-- <div id = "video-modal"class="modal-content">
+      <h4>Modal Header</h4>
+      <p>A bunch of text</p>
+    </div> -->
+    <!-- <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a>
+    </div> -->
+  </div>
+<!-- ////////////// -->
+
+  
+
+  <script src = "assets/javascript/trailer-park.js"></script>
+
+    
 </body>
-
 </html>
+
