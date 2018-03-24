@@ -27,7 +27,6 @@
 </head>
 <body>
 
-
 <!-- HEADER/NAVBAR -->
 <nav class="nav-extended grey darken-3">
   <div class="nav-wrapper">
@@ -43,12 +42,23 @@
     <i class="material-icons">menu</i>
   </a>
   <ul>
+    <li>
+      <a class="btn-floating tooltipped orange" data-position="bottom" data-delay="50" data-tooltip="Search!"><i class="material-icons">search</i></a>
+    </li>
     <li><a class="btn-floating tooltipped red" data-position="bottom" data-delay="50" data-tooltip="Whats Hot!"><i class="material-icons">whatshot</i></a></li>
     <li><a class="btn-floating tooltipped green" data-position="bottom" data-delay="50" data-tooltip="Whats New!"><i class="material-icons">fiber_new</i></a></li>
     <li><a class="btn-floating tooltipped blue" data-position="bottom" data-delay="50" data-tooltip="Kid Friendly"><i class="material-icons">face</i></a></li>
     <li><a class="btn-floating tooltipped yellow darken-1" data-position="bottom" data-delay="50" data-tooltip="Starred"><i class="material-icons">star_border</i></a></li>
     <li><a class="btn-floating tooltipped purple" data-position="bottom" data-delay="50" data-tooltip="Login/Sign-Up"><i class="material-icons">account_circle</i></a></li>
-
+    <li>
+    <form>
+      <div class="input-field" style="position:relative;right:-65px;top:14px; background:#ff11778a; border-radius:5px">
+        <input id="search" type="search" required>
+        <label class="label-icon" for="search" style="position:absolute;left: -30px"><i class="material-icons">search</i></label>
+        <i class="material-icons">close</i>
+      </div>
+      </form>
+    </li>
   </ul>
 </div>
 
@@ -56,10 +66,9 @@
 <!-- BUTTONS AREA-->
 <!-- POSSIBLE DYNAMIC BUTTON CREATION FUNCTION -->
 <!-- ADD RESPONSIVENESS TO BUTTONS -->
-<div id="test1" class="col s12 btn waves-effect waves-light">In Theaters</div>
-<div id="test2" class="col s12 btn waves-effect waves-light">Top Netflix</div>
-<div id="test3" class="col s12 btn waves-effect waves-light">Top Movies</div>
-<div id="test4" class="col s12 btn waves-effect waves-light">Top TV-Shows</div>
+<div id="test1" class="col s12 btn waves-effect waves-light">In Theaters Now</div>
+<div id="test2" class="col s12 btn waves-effect waves-light">Top Movies</div>
+<div id="test3" class="col s12 btn waves-effect waves-light">Top TV-Shows</div>
 
   <!-- ADD STAGING AREA FOR DYNAMIC VIDEO TRAILER AREA -->
 
@@ -67,21 +76,20 @@
 <hr> <!--Testing Purposes <------ Remove This hr Later-->
 
 <!-- ///////newstuff/////////// -->
-<div id = "videos-display"></div>
-
+<div class = "container">
+  <div id = "videos-display" class="scrollspy"></div>
+</div>
   <!-- Modal Structure -->
-  <div id="modal1" class="modal modal-fixed-footer">
-    <!-- <div id = "video-modal"class="modal-content">
-      <h4>Modal Header</h4>
-      <p>A bunch of text</p>
-    </div> -->
-    <!-- <div class="modal-footer">
-      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a>
-    </div> -->
+  <div id="modal1" class="modal modal-fixed-footer scrollspy">
   </div>
+
+
+    </div>
 <!-- ////////////// -->
 
   
+
+  <script src = "assets/javascript/trailer-park.js"></script>
 
   <script src = "assets/javascript/trailer-park.js"></script>
 
