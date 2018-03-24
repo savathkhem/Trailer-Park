@@ -11,8 +11,22 @@
 
   <!-- FIREBASE -->
   <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase-messaging.js"></script>
+  <script src="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.css" />
+  <script src="bower_components/firebaseui/dist/firebaseui.js"></script>
+  <link type="text/css" rel="stylesheet" href="bower_components/firebaseui/dist/firebaseui.css" />
+
+<!-- Leave out Storage -->
+<!-- <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase-storage.js"></script> -->
+
   <!-- OAUTH STUFF -->
   <script src = "assets/javascript/oauth.js"></script>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
   <script src="https://smartlock.google.com/client"></script>
 
   <!-- jquery -->
@@ -56,7 +70,8 @@
     <li><a class="btn-floating tooltipped green" data-position="bottom" data-delay="50" data-tooltip="Whats New!"><i class="material-icons">fiber_new</i></a></li>
     <li><a class="btn-floating tooltipped blue" data-position="bottom" data-delay="50" data-tooltip="Kid Friendly"><i class="material-icons">face</i></a></li>
     <li><a class="btn-floating tooltipped yellow darken-1" data-position="bottom" data-delay="50" data-tooltip="Starred"><i class="material-icons">star_border</i></a></li>
-    <li><a class="btn-floating tooltipped purple modal-trigger" href="firebaseui-web\demo\public\index.html" data-position="bottom" data-delay="50" data-tooltip="Login/Sign-Up"><i class="material-icons">account_circle</i></a></li>
+    <li><a class="btn-floating tooltipped purple modal-trigger" href="modal2" data-position="bottom" data-delay="50" data-tooltip="Login/Sign-Up"><i class="material-icons">account_circle</i></a></li>
+    <li><div class="g-signin2" data-onsuccess="onSignIn"></div><a href="#" onclick="signOut();">Sign out</a></li>
     <li>
     <form>
       <div class="input-field" style="position:relative;right:-65px;top:14px; background:#ff11778a; border-radius:5px">
@@ -75,6 +90,24 @@
 <div id="test1" class="col s12 btn waves-effect waves-light">In Theaters Now</div>
 <div id="test2" class="col s12 btn waves-effect waves-light">Top Movies</div>
 <div id="test3" class="col s12 btn waves-effect waves-light">Top TV-Shows</div>
+
+<!-- ????????????test staging for oauth -->
+
+<!-- The surrounding HTML is left untouched by FirebaseUI.
+     Your app may use that space for branding, controls and other customizations.-->
+     <h1 style="color:white">Welcome to My Awesome App</h1>
+     <div id="firebaseui-auth-container"></div>
+     <div id="loader" style="color:white">Loading...</div>
+
+
+<!-- ////////////////end staging for test -->
+
+
+
+
+
+
+
 
   <!-- ADD STAGING AREA FOR DYNAMIC VIDEO TRAILER AREA -->
 
