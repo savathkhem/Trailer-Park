@@ -7,12 +7,10 @@ $(document).ready(function () {
 
   var huluPlaylistId = "PLviBkls1C5CJAIIV5WbwZZrsYaPERbbBJ";
 
-<<<<<<< HEAD
   var googleMaps = `<iframe width="700" height="550" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBCEE2nzor1sZUz0mC6-wKUXjQEEdEORbU&q=Movie+theaters+near+me" allowfullscreen></iframe>`;
 
   $("#test1").on("click", function () {
     console.log('test2 clicked!');
-=======
   uTellyKey = "QnaLbSwHjRmsh0e5QANPxCLNN3wPp16dkM2jsnqXMkveQwmkxF"
 
   var tmdbApiKey = 'api_key=0c9ebd7d6e76fc10f179166f9acd0665'
@@ -22,7 +20,6 @@ $(document).ready(function () {
   var topTvURL = "https://api.themoviedb.org/3/tv/popular?api_key=0c9ebd7d6e76fc10f179166f9acd0665&language=en-US"
 
   var moviesURL = "https://api.themoviedb.org/3/movie/now_playing?api_key=0c9ebd7d6e76fc10f179166f9acd0665&language=en-US&page=1";
->>>>>>> 7260f0e92110eb4c96dd50964025da3216ab25be
 
   var topMoviesUrl = "https://api.themoviedb.org/3/discover/movie?api_key=0c9ebd7d6e76fc10f179166f9acd0665&language=en-US&region=us&vote_count.gte=5000&sort_by=vote_average.desc&include_adult=false&include_video=false&page=1"
 
@@ -67,7 +64,6 @@ $(document).ready(function () {
           </div>
         </div>`;
 
-<<<<<<< HEAD
         $("#maps").on("click", function() {
           $("#modal1").empty();
           $("#modal1").html(googleMaps);
@@ -77,9 +73,7 @@ $(document).ready(function () {
         $("#videos-display").append(posterImg);
         titlesArr.push(response.results[i].title);
         //$("body").append(modals);
-=======
         $("#videos-display").append(posterImg)
->>>>>>> 7260f0e92110eb4c96dd50964025da3216ab25be
       }
     });
   });
