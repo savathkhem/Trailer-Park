@@ -63,3 +63,11 @@ body {
     float: left;
     width: 30%;
 }
+
+#maps {
+    font-size: 12px;
+}
+
+.streamable {
+    font-size: 10px; 
+}
