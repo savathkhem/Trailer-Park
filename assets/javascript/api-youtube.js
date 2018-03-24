@@ -201,7 +201,7 @@ $("#test2").on("click", function () {
       }
     }
     if (response.results.length === 0) {
-      $(divId).append("<p>Unfortunately, this isn't available on any streaming platforms at this time. </p>")
+      $(divId).html("<p>Unfortunately, this isn't available on any streaming platforms at this time. </p>")
     }
 
 

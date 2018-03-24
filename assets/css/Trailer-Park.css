@@ -11,6 +11,9 @@ body {
     height: 400px;
 } */
 
+.container {
+    width: 85%;
+}
 .card .card-content {
     padding: 0px;
 }
