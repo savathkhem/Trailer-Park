@@ -5,9 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+  <!-- FIREBASE STUFF -->
+  <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+
+  <script src="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.css" />
+  <script src="assets/javascript/oauth.js"></script>
+  <!-- END FIREBASE STUFF -->
+
   <!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-
   <!-- jquery -->
   <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
   <!-- Compiled and minified JavaScript -->
@@ -49,7 +56,7 @@
     <li><a class="btn-floating tooltipped green" data-position="bottom" data-delay="50" data-tooltip="Whats New!"><i class="material-icons">fiber_new</i></a></li>
     <li><a class="btn-floating tooltipped blue" data-position="bottom" data-delay="50" data-tooltip="Kid Friendly"><i class="material-icons">face</i></a></li>
     <li><a class="btn-floating tooltipped yellow darken-1" data-position="bottom" data-delay="50" data-tooltip="Starred"><i class="material-icons">star_border</i></a></li>
-    <li><a class="btn-floating tooltipped purple" data-position="bottom" data-delay="50" data-tooltip="Login/Sign-Up"><i class="material-icons">account_circle</i></a></li>
+    <li><a class="btn-floating tooltipped purple modal-trigger" href="#modal2" data-position="bottom" data-delay="50" data-tooltip="Login/Sign-Up"><i class="material-icons">account_circle</i></a></li>
     <li>
     <form>
       <div class="input-field" style="position:relative;right:-65px;top:14px; background:#ff11778a; border-radius:5px">
@@ -63,7 +70,6 @@
   </ul>
 </div>
 
-
 <!-- BUTTONS AREA-->
 <!-- POSSIBLE DYNAMIC BUTTON CREATION FUNCTION -->
 <!-- ADD RESPONSIVENESS TO BUTTONS -->
@@ -73,28 +79,26 @@
 
   <!-- ADD STAGING AREA FOR DYNAMIC VIDEO TRAILER AREA -->
 
-<!-- Modal Trigger -->
 <hr> <!--Testing Purposes <------ Remove This hr Later-->
 
-<!-- ///////newstuff/////////// -->
 <div class = "container">
   <div id = "videos-display" class="scrollspy"></div>
 </div>
-  <!-- Modal Structure -->
-  <div id="modal1" class="modal modal-fixed-footer scrollspy">
+  <!-- MODAL1 STRUCTURE -->
+  <div id="modal1" class="modal modal-fixed-footer scrollspy"></div>
+  <!-- END MODAL1 STRUCTURE -->
+
+  <!-- MODAL2 STRUCTURE -->
+  <div id="modal2" class="modal modal-fixed-footer scrollspy">
+    <div id="firebaseui-auth-container"></div>
+    <div id="loader">Loading...</div>
   </div>
-
-
-    </div>
-<!-- ////////////// -->
+  <!-- END MODAL2 STRUCTURE -->
 
   
 
   <script src = "assets/javascript/trailer-park.js"></script>
 
-  <script src = "assets/javascript/trailer-park.js"></script>
-
-    
 </body>
 </html>
 
