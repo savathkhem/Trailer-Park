@@ -62,7 +62,7 @@ $(document).ready(function () {
           </div>
         </div>`;
 
-        $("#maps").on("click", function() {
+        $("#maps").on("click", function () {
           $("#modal1").empty();
           $("#modal1").html(googleMaps);
         });
@@ -107,7 +107,8 @@ $(document).ready(function () {
             <div id = "${response.results[i].title}" class="card-reveal">
               <span class="card-title grey-text text-darken-4">${response.results[i].title}<i class="material-icons right">close</i></span>
               <p>${response.results[i].overview}</p>
-              <a class = "streamable" data-title = "${response.results[i].title}">Can I stream this?</a>
+              <br>
+              <a data-title = "${response.results[i].title}" class="btn waves-effect waves-light streamable">Can I stream this?</a>
               <div id = "streaming-services-${response.results[i].title}"></div>
             </div>
           </div>
@@ -146,10 +147,11 @@ $(document).ready(function () {
                 </span>
               </div>
               <div id = "${response.results[i].name}" class="card-reveal">
-                <span class="card-title grey-text text-darken-4">${response.results[i].name}<i class="material-icons right">close</i></span>
-                <p>${response.results[i].overview}</p>
-                <a class = "streamable" data-title = "${response.results[i].name}">Can I stream this?</a>
-                <div id = "streaming-services-${response.results[i].name}"></div>
+                  <span class="card-title grey-text text-darken-4">${response.results[i].name}<i class="material-icons right">close</i></span>
+                  <p>${response.results[i].overview}</p>
+                  <br>
+                  <a data-title = "${response.results[i].name}" class="btn waves-effect waves-light streamable">Can I stream this?</a>
+                  <div id = "streaming-services-${response.results[i].name}"></div>
               </div>
             </div>
           </div>`;

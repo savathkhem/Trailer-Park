@@ -11,6 +11,9 @@ body {
     height: 400px;
 } */
 
+.container {
+    width: 85%;
+}
 .card .card-content {
     padding: 0px;
 }
@@ -59,4 +62,12 @@ body {
     margin: 3px;
     float: left;
     width: 30%;
+}
+
+#maps {
+    font-size: 12px;
+}
+
+.streamable {
+    font-size: 10px; 
 }
