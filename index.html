@@ -5,30 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <!-- Compiled and minified CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-
-
-  <!-- FIREBASE -->
+  <!-- FIREBASE STUFF -->
   <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase-database.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase-firestore.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase-messaging.js"></script>
+
   <script src="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.js"></script>
   <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.css" />
-  <script src="bower_components/firebaseui/dist/firebaseui.js"></script>
-  <link type="text/css" rel="stylesheet" href="bower_components/firebaseui/dist/firebaseui.css" />
+  <script src="assets/javascript/oauth.js"></script>
+  <!-- END FIREBASE STUFF -->
 
-<!-- Leave out Storage -->
-<!-- <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase-storage.js"></script> -->
-
-  <!-- OAUTH STUFF -->
-  <script src = "assets/javascript/oauth.js"></script>
-  <script src="https://apis.google.com/js/platform.js" async defer></script>
-  <script src="https://smartlock.google.com/client"></script>
-
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
   <!-- jquery -->
   <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
   <!-- Compiled and minified JavaScript -->
@@ -70,8 +56,7 @@
     <li><a class="btn-floating tooltipped green" data-position="bottom" data-delay="50" data-tooltip="Whats New!"><i class="material-icons">fiber_new</i></a></li>
     <li><a class="btn-floating tooltipped blue" data-position="bottom" data-delay="50" data-tooltip="Kid Friendly"><i class="material-icons">face</i></a></li>
     <li><a class="btn-floating tooltipped yellow darken-1" data-position="bottom" data-delay="50" data-tooltip="Starred"><i class="material-icons">star_border</i></a></li>
-    <li><a class="btn-floating tooltipped purple modal-trigger" href="modal2" data-position="bottom" data-delay="50" data-tooltip="Login/Sign-Up"><i class="material-icons">account_circle</i></a></li>
-    <li><div class="g-signin2" data-onsuccess="onSignIn"></div><a href="#" onclick="signOut();">Sign out</a></li>
+    <li><a class="btn-floating tooltipped purple modal-trigger" href="#modal2" data-position="bottom" data-delay="50" data-tooltip="Login/Sign-Up"><i class="material-icons">account_circle</i></a></li>
     <li>
     <form>
       <div class="input-field" style="position:relative;right:-65px;top:14px; background:#ff11778a; border-radius:5px">
@@ -91,54 +76,23 @@
 <div id="test2" class="col s12 btn waves-effect waves-light">Top Movies</div>
 <div id="test3" class="col s12 btn waves-effect waves-light">Top TV-Shows</div>
 
-<!-- ????????????test staging for oauth -->
-
-<!-- The surrounding HTML is left untouched by FirebaseUI.
-     Your app may use that space for branding, controls and other customizations.-->
-     <h1 style="color:white">Welcome to My Awesome App</h1>
-     <div id="firebaseui-auth-container"></div>
-     <div id="loader" style="color:white">Loading...</div>
-
-
-<!-- ////////////////end staging for test -->
-
-
-
-
-
-
-
-
   <!-- ADD STAGING AREA FOR DYNAMIC VIDEO TRAILER AREA -->
 
-<!-- Modal Trigger -->
 <hr> <!--Testing Purposes <------ Remove This hr Later-->
 
-<!-- ///////newstuff/////////// -->
-<div id = "videos-display" class="scrollspy"></div>
+<div class = "container">
+  <div id = "videos-display" class="scrollspy"></div>
+</div>
+  <!-- MODAL1 STRUCTURE -->
+  <div id="modal1" class="modal modal-fixed-footer scrollspy"></div>
+  <!-- END MODAL1 STRUCTURE -->
 
-  <!-- Modal Structure -->
-  <div id="modal1" class="modal modal-fixed-footer scrollspy">
-    <!-- <div id = "video-modal"class="modal-content">
-      <h4>Modal Header</h4>
-      <p>A bunch of text</p>
-    </div> -->
-    <!-- <div class="modal-footer">
-      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a>
-    </div> -->
-  </div>
-
-  <!-- Modal Structure -->
+  <!-- MODAL2 STRUCTURE -->
   <div id="modal2" class="modal modal-fixed-footer scrollspy">
-      <div id = "video-modal"class="modal-content">
-        <h4>Modal Header</h4>
-        <p>A bunch of text</p>
-      </div>
-      <div class="modal-footer">
-        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a>
-      </div>
-    </div>
-<!-- ////////////// -->
+    <div id="firebaseui-auth-container"></div>
+    <div id="loader">Loading...</div>
+  </div>
+  <!-- END MODAL2 STRUCTURE -->
 
   
 
