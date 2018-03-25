@@ -112,3 +112,10 @@ a {
   animation: none; */
 }
 
+.btn-floating {
+  background: #FF1177;
+}
+
+.btn .btn-large {
+  background: #FF1177;
+}

@@ -35,65 +35,64 @@
 <body>
 
 <!-- HEADER/NAVBAR -->
-<nav class="nav-extended grey darken-3">
-  <div class="nav-wrapper">
-    <p id="logo"><a href="index.html">Trailer Park</a></p>
-    <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-  </div>
-</nav>
+  <nav class="nav-extended grey darken-3">
+    <div class="nav-wrapper">
+      <p id="logo"><a href="index.html">Trailer Park</a></p>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
 
 <!-- MENU SECTION -->
-<!--  SEARCH BAR AREA-->
 <div class="fixed-action-btn horizontal click-to-toggle" id="linkBack" style="position:absolute;right:5px;top:5px">
   <a class="btn-floating btn-large waves-effect waves-light" style="background:#FF1177">
     <i class="material-icons">menu</i>
   </a>
   <ul>
-    <li>
+    <!-- <li>
       <a class="btn-floating tooltipped orange" data-position="bottom" data-delay="50" data-tooltip="Search!"><i class="material-icons">search</i></a>
-    </li>
+    </li> -->
     <li><a class="btn-floating tooltipped red" data-position="bottom" data-delay="50" data-tooltip="Whats Hot!"><i class="material-icons">whatshot</i></a></li>
     <li><a class="btn-floating tooltipped green" data-position="bottom" data-delay="50" data-tooltip="Whats New!"><i class="material-icons">fiber_new</i></a></li>
     <li><a class="btn-floating tooltipped blue" data-position="bottom" data-delay="50" data-tooltip="Kid Friendly"><i class="material-icons">face</i></a></li>
     <li><a class="btn-floating tooltipped yellow darken-1" data-position="bottom" data-delay="50" data-tooltip="Starred"><i class="material-icons">star_border</i></a></li>
     <li><a class="btn-floating tooltipped purple modal-trigger" href="#modal2" data-position="bottom" data-delay="50" data-tooltip="Login/Sign-Up"><i class="material-icons">account_circle</i></a></li>
     <li>
-    <form>
-      <div class="input-field" style="position:relative;right:-65px;top:14px; background:#ff11778a; border-radius:5px">
-        <input id="search" type="search" required>
-        <label class="label-icon" for="search" style="position:absolute;left: -30px"><button id =
-          "search-btn" class = "btn" type = "submit"><i class="material-icons">search</i></button></label>
-        <i class="material-icons">close</i>
-      </div>
-      </form>
+        <a href="#" onclick="signOut();">Sign out</a>
     </li>
   </ul>
 </div>
 
 <!-- BUTTONS AREA-->
-<!-- POSSIBLE DYNAMIC BUTTON CREATION FUNCTION -->
-<!-- ADD RESPONSIVENESS TO BUTTONS -->
-<div id="test1" class="col s12 btn waves-effect waves-light">In Theaters Now</div>
-<div id="test2" class="col s12 btn waves-effect waves-light">Top Movies</div>
-<div id="test3" class="col s12 btn waves-effect waves-light">Top TV-Shows</div>
+<div>
+  <div id="test1" class="btn waves-effect waves-light">In Theaters Now</div>
+  <div id="test2" class="btn waves-effect waves-light">Top Movies</div>
+  <div id="test3" class="btn waves-effect waves-light">Top TV-Shows</div>
+  <!-- SEARCH BAR AREA -->
+  <form style="float:right">
+      <button id ="search-btn" class="btn btn-floating waves-effect waves-light" type="submit"><i class="material-icons">search</i></i></button>  
+    <div class="search-btn input-field" style="float:right; margin:0; height:36px; width:250px; background:#ff11778a; border-radius:5px">
+      <input id="search" type="search" required style="margin:0; height:36px; width:250px; border-radius:5px">
+    </div>
+  </form>
+</div>
 
-  <!-- ADD STAGING AREA FOR DYNAMIC VIDEO TRAILER AREA -->
+<hr>
 
-<hr> <!--Testing Purposes <------ Remove This hr Later-->
-
+<!-- ADD STAGING AREA FOR DYNAMIC VIDEO TRAILER AREA -->
 <div class = "container">
   <div id = "videos-display" class="scrollspy"></div>
 </div>
-  <!-- MODAL1 STRUCTURE -->
-  <div id="modal1" class="modal modal-fixed-footer scrollspy"></div>
-  <!-- END MODAL1 STRUCTURE -->
 
-  <!-- MODAL2 STRUCTURE -->
-  <div id="modal2" class="modal modal-fixed-footer scrollspy">
-    <div id="firebaseui-auth-container"></div>
-    <div id="loader">Loading...</div>
-  </div>
-  <!-- END MODAL2 STRUCTURE -->
+<!-- MODAL1 STRUCTURE -->
+<div id="modal1" class="modal modal-fixed-footer scrollspy"></div>
+<!-- END MODAL1 STRUCTURE -->
+
+<!-- MODAL2 STRUCTURE -->
+<div id="modal2" class="modal modal-fixed-footer scrollspy">
+  <div id="firebaseui-auth-container"></div>
+  <div id="loader">Loading...</div>
+</div>
+<!-- END MODAL2 STRUCTURE -->
 
   
 
