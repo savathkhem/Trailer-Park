@@ -68,17 +68,19 @@ $(document).ready(function () {
           </div>
         </div>`;
 
-        $("#maps").on("click", function () {
-          $("#modal1").empty();
-          $("#modal1").html(googleMaps);
-        });
-
+       
 
         $("#videos-display").append(posterImg);
       
       }
     });
   });
+
+  $(document).on("click", "#maps", function () {
+    $("#modal1").empty();
+    $("#modal1").html(googleMaps);
+  });
+
 
   //Top Movies
   $("#test2").on("click", function () {
@@ -257,8 +259,8 @@ $(document).ready(function () {
       for (var i = 0; i < response.results.length; i++) {
         console.log(response.results[i].title);
         var posterPath = tmdbImgUrl + response.results[i].poster_path;
-        if (posterPath.includes('null')===true){
-          posterPath = "assets/images/bg1.png";
+        if (posterPath.includes('null') === true){
+          posterPath = "assets/images/placeholder.jpg";
         }
         var posterImg = `
 
