@@ -49,6 +49,7 @@ $(document).ready(function () {
           <div class="card">
             <div class="card-image waves-effect waves-block waves-light">
               <img class="modal-trigger movie-poster" data-title = "${response.results[i].title}" src="${posterPath}" href="#modal1">
+              <a href="http://www.google.com" style="position:absolute;right:5px;bottom:5px" class="star-btn btn-floating yellow darken-1"><i class="material-icons">star_border</i></a>
             </div>
             <div class="card-content">
               <span class="card-title activator grey-text text-darken-4">
@@ -97,20 +98,23 @@ $(document).ready(function () {
         console.log(response.results[i].title);
         var posterPath = tmdbImgUrl + response.results[i].poster_path;
         var posterImg = `
-        <div class="poster-container">
-          <div class="card">
-            <div class="card-image waves-effect waves-block waves-light">
-              <img class="modal-trigger movie-poster" data-title = "${response.results[i].title}" src="${posterPath}" href="#modal1">
-            </div>
-            <div class="card-content">
-              <span class="card-title activator grey-text text-darken-4">
-                <div id="modal-btn-container">
-                <a id="modal-btn" class="waves-effect waves-light btn modal-trigger" href="#modal1">${response.results[i].title}</a>
-                <i id="more-vert-btn" class="material-icons right">more_vert</i>
-                </div>
-              </span>
-            </div>
-            <div id = "${response.results[i].title}" class="card-reveal">
+
+      <div class="poster-container">
+        <div class="card">
+          <div class="card-image waves-effect waves-block waves-light">
+            <img class="modal-trigger movie-poster" data-title = "${response.results[i].title}" src="${posterPath}" href="#modal1">
+            <a href="http://www.google.com" style="position:absolute;right:5px;bottom:5px" class="star-btn btn-floating yellow darken-1"><i class="material-icons">star_border</i></a>      
+          </div>
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">
+              <div id="modal-btn-container">
+              <a id="modal-btn" class="waves-effect waves-light btn modal-trigger" href="#modal1">${response.results[i].title}</a>
+              <i id="more-vert-btn" class="material-icons right">more_vert</i>
+              </div>
+            </span>
+          </div>
+          <div id = "${response.results[i].title}" class="card-reveal">
+
               <span class="card-title grey-text text-darken-4">${response.results[i].title}<i class="material-icons right">close</i></span>
               <p>${response.results[i].overview}</p>
               <br>
@@ -140,14 +144,18 @@ $(document).ready(function () {
         console.log(response.results[i].title);
         var posterPath = tmdbImgUrl + response.results[i].poster_path;
         var posterImg = `
-        <div class="poster-container">
-          <div class="card">
-            <div class="card-image waves-effect waves-block waves-light">
-              <img class="modal-trigger movie-poster" data-title = "${response.results[i].name}" src="${posterPath}" href="#modal1">
-            </div>
-            <div class="card-content">
-              <span class="card-title activator grey-text text-darken-4">
-                <div id="modal-btn-container">
+
+          <div class="poster-container">
+            <div class="card">
+              <div class="card-image waves-effect waves-block waves-light">
+                <img class="modal-trigger movie-poster" data-title = "${response.results[i].name}" src="${posterPath}" href="#modal1">
+                <a href="http://www.google.com" style="position:absolute;right:5px;bottom:5px" class="star-btn btn-floating yellow darken-1"><i class="material-icons">star_border</i></a>
+              </div>
+              <div class="card-content">
+                <span class="card-title activator grey-text text-darken-4">
+                  <div id="modal-btn-container">
+
+
                   <a id="modal-btn" class="waves-effect waves-light btn modal-trigger" href="#modal1">${response.results[i].name}</a>
                   <i id="more-vert-btn" class="material-icons right">more_vert</i>
                 </div>
@@ -253,25 +261,29 @@ $(document).ready(function () {
           posterPath = "assets/images/bg1.png";
         }
         var posterImg = `
-        <div class="poster-container">
-          <div class="card">
-            <div class="card-image waves-effect waves-block waves-light">
-              <img class="modal-trigger movie-poster" data-title = "${response.results[i].title}" src="${posterPath}" href="#modal1">
-            </div>
-            <div class="card-content">
-              <span class="card-title activator grey-text text-darken-4">
-                <div id="modal-btn-container">
-                <a id="modal-btn" class="waves-effect waves-light btn modal-trigger" href="#modal1">${response.results[i].title}</a>
-                <i id="more-vert-btn" class="material-icons right">more_vert</i>
-                </div>
-              </span>
-            </div>
-            <div id = "${response.results[i].title}" class="card-reveal">
-              <span class="card-title grey-text text-darken-4">${response.results[i].title}<i class="material-icons right">close</i></span>
-              <p>${response.results[i].overview}</p>
-              <br>
-              <a data-title = "${response.results[i].title}" class="btn waves-effect waves-light streamable">Can I stream this?</a>
-              <div id = "streaming-services-${response.results[i].title}"></div>
+
+          <div class="poster-container">
+            <div class="card">
+              <div class="card-image waves-effect waves-block waves-light">
+                <img class="modal-trigger movie-poster" data-title = "${response.results[i].title}" src="${posterPath}" href="#modal1">
+                <a href="http://www.google.com" style="position:absolute;right:5px;bottom:5px" class="star-btn btn-floating yellow darken-1"><i class="material-icons">star_border</i></a>
+              </div>
+              <div class="card-content">
+                <span class="card-title activator grey-text text-darken-4">
+                  <div id="modal-btn-container">
+                  <a id="modal-btn" class="waves-effect waves-light btn modal-trigger" href="#modal1">${response.results[i].title}</a>
+                  <i id="more-vert-btn" class="material-icons right">more_vert</i>
+                  </div>
+                </span>
+              </div>
+              <div id = "${response.results[i].title}" class="card-reveal">
+                  <span class="card-title grey-text text-darken-4">${response.results[i].title}<i class="material-icons right">close</i></span>
+                  <p>${response.results[i].overview}</p>
+                  <br>
+                  <a data-title = "${response.results[i].title}" class="btn waves-effect waves-light streamable">Can I stream this?</a>
+                  <div id = "streaming-services-${response.results[i].title}"></div>
+              </div>
+
             </div>
           </div>
         </div>`;
@@ -293,10 +305,29 @@ $(document).ready(function () {
         console.log(response.results[i].name);
         var posterPath = tmdbImgUrl + response.results[i].poster_path;
         var posterImg = `
-        <div class="poster-container">
-          <div class="card">
-            <div class="card-image waves-effect waves-block waves-light">
-              <img class="modal-trigger movie-poster" data-title = "${response.results[i].name}" src="${posterPath}" href="#modal1">
+
+          <div class="poster-container">
+            <div class="card">
+              <div class="card-image waves-effect waves-block waves-light">
+                <img class="modal-trigger movie-poster" data-title = "${response.results[i].name}" src="${posterPath}" href="#modal1">
+                <a href="http://www.google.com" style="position:absolute;right:5px;bottom:5px" class="star-btn btn-floating yellow darken-1"><i class="material-icons">star_border</i></a>
+              </div>
+              <div class="card-content">
+                <span class="card-title activator grey-text text-darken-4">
+                  <div id="modal-btn-container">
+                  <a id="modal-btn" class="waves-effect waves-light btn modal-trigger" href="#modal1">${response.results[i].name}</a>
+                  <i id="more-vert-btn" class="material-icons right">more_vert</i>
+                  </div>
+                </span>
+              </div>
+              <div id = "${response.results[i].name}" class="card-reveal">
+                  <span class="card-title grey-text text-darken-4">${response.results[i].name}<i class="material-icons right">close</i></span>
+                  <p>${response.results[i].overview}</p>
+                  <br>
+                  <a data-title = "${response.results[i].name}" class="btn waves-effect waves-light streamable">Can I stream this?</a>
+                  <div id = "streaming-services-${response.results[i].name}"></div>
+              </div>
+
             </div>
             <div class="card-content">
               <span class="card-title activator grey-text text-darken-4">

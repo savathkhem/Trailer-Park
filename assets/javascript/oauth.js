@@ -12,6 +12,9 @@
 
   // Initialize the FirebaseUI Widget using Firebase.
   var ui = new firebaseui.auth.AuthUI(firebase.auth());
+  var provider = new firebase.auth.FacebookAuthProvider();
+  var provider = new firebase.auth.TwitterAuthProvider();
+  var provider = new firebase.auth.GithubAuthProvider();
 
   var uiConfig = {
       callbacks: {
@@ -36,8 +39,8 @@
         firebase.auth.FacebookAuthProvider.PROVIDER_ID,
         firebase.auth.TwitterAuthProvider.PROVIDER_ID,
         firebase.auth.GithubAuthProvider.PROVIDER_ID,
-        firebase.auth.EmailAuthProvider.PROVIDER_ID,
-        firebase.auth.PhoneAuthProvider.PROVIDER_ID
+        // firebase.auth.EmailAuthProvider.PROVIDER_ID,
+        // firebase.auth.PhoneAuthProvider.PROVIDER_ID
       ],
       // Terms of service url.
       tosUrl: '<your-tos-url>'
@@ -45,8 +48,10 @@
 
     // The start method will wait until the DOM is loaded.
 ui.start('#firebaseui-auth-container', uiConfig);
-  
-  
 
-
-    
+function signOut() {
+  var auth2 = gapi.auth2.getAuthInstance();
+  auth2.signOut().then(function () {
+    console.log('User signed out.');
+  });
+}

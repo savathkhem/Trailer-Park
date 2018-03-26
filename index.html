@@ -5,29 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <!-- FIREBASE STUFF -->
+  <!-- FIREBASE/OAUTH STUFF -->
   <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
-
   <script src="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.js"></script>
   <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.css" />
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
   <script src="assets/javascript/oauth.js"></script>
-  <!-- END FIREBASE STUFF -->
 
-  <!-- Compiled and minified CSS -->
+  <!-- MATERIALIZE CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-  <!-- jquery -->
+  <!-- JQUERY -->
   <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
-  <!-- Compiled and minified JavaScript -->
+  <!-- MATERIALIZE JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-  <!-- <script src="assets/javascript/materialize.js"></script> -->
   <script src = "assets/javascript/api-youtube.js"></script>
 
-
+  <!-- OUR CSS & FONT -->
   <link rel="stylesheet" type="text/css" href="assets/css/Trailer-Park.css">
-  <link href="https://fonts.googleapis.com/css?family=Monoton" rel="stylesheet">
-
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="assets/css/Logo.css">
+  <link href="https://fonts.googleapis.com/css?family=Monoton" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         
   <title>Trailer Park</title>
     
@@ -35,65 +32,64 @@
 <body>
 
 <!-- HEADER/NAVBAR -->
-<nav class="nav-extended grey darken-3">
-  <div class="nav-wrapper">
-    <p id="logo"><a href="Trailer-Park.html">Trailer Park</a></p>
-    <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-  </div>
-</nav>
+  <nav class="nav-extended grey darken-3">
+    <div class="nav-wrapper">
+      <p id="logo"><a href="index.html">Trailer Park</a></p>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
 
 <!-- MENU SECTION -->
-<!--  SEARCH BAR AREA-->
 <div class="fixed-action-btn horizontal click-to-toggle" id="linkBack" style="position:absolute;right:5px;top:5px">
   <a class="btn-floating btn-large waves-effect waves-light" style="background:#FF1177">
     <i class="material-icons">menu</i>
   </a>
   <ul>
-    <li>
+    <!-- <li>
       <a class="btn-floating tooltipped orange" data-position="bottom" data-delay="50" data-tooltip="Search!"><i class="material-icons">search</i></a>
-    </li>
+    </li> -->
     <li><a class="btn-floating tooltipped red" data-position="bottom" data-delay="50" data-tooltip="Whats Hot!"><i class="material-icons">whatshot</i></a></li>
     <li><a class="btn-floating tooltipped green" data-position="bottom" data-delay="50" data-tooltip="Whats New!"><i class="material-icons">fiber_new</i></a></li>
     <li><a class="btn-floating tooltipped blue" data-position="bottom" data-delay="50" data-tooltip="Kid Friendly"><i class="material-icons">face</i></a></li>
     <li><a class="btn-floating tooltipped yellow darken-1" data-position="bottom" data-delay="50" data-tooltip="Starred"><i class="material-icons">star_border</i></a></li>
     <li><a class="btn-floating tooltipped purple modal-trigger" href="#modal2" data-position="bottom" data-delay="50" data-tooltip="Login/Sign-Up"><i class="material-icons">account_circle</i></a></li>
     <li>
-    <form>
-      <div class="input-field" style="position:relative;right:-65px;top:14px; background:#ff11778a; border-radius:5px">
-        <input id="search" type="search" required>
-        <label class="label-icon" for="search" style="position:absolute;left: -30px"><button id =
-          "search-btn" class = "btn" type = "submit"><i class="material-icons">search</i></button></label>
-        <i class="material-icons">close</i>
-      </div>
-      </form>
+        <div class="g-person" data-href="https://plus.google.com/profileId"></div>
     </li>
   </ul>
 </div>
 
 <!-- BUTTONS AREA-->
-<!-- POSSIBLE DYNAMIC BUTTON CREATION FUNCTION -->
-<!-- ADD RESPONSIVENESS TO BUTTONS -->
-<div id="test1" class="col s12 btn waves-effect waves-light">In Theaters Now</div>
-<div id="test2" class="col s12 btn waves-effect waves-light">Top Movies</div>
-<div id="test3" class="col s12 btn waves-effect waves-light">Top TV-Shows</div>
+<div>
+  <div id="test1" class="btn waves-effect waves-light">In Theaters Now</div>
+  <div id="test2" class="btn waves-effect waves-light">Top Movies</div>
+  <div id="test3" class="btn waves-effect waves-light">Top TV-Shows</div>
+  <!-- SEARCH BAR AREA -->
+  <form style="float:right">
+      <button id ="search-btn" class="btn btn-floating" type="submit"><i class="material-icons">search</i></i></button>  
+    <div class="search-btn input-field" style="float:right; margin:0; height:36px; width:250px; background:#ff11778a; border-radius:5px">
+      <input id="search" type="search" required style="margin:0; height:36px; width:250px; border-radius:5px">
+    </div>
+  </form>
+</div>
 
-  <!-- ADD STAGING AREA FOR DYNAMIC VIDEO TRAILER AREA -->
+<hr>
 
-<hr> <!--Testing Purposes <------ Remove This hr Later-->
-
+<!-- ADD STAGING AREA FOR DYNAMIC VIDEO TRAILER AREA -->
 <div class = "container">
   <div id = "videos-display" class="scrollspy"></div>
 </div>
-  <!-- MODAL1 STRUCTURE -->
-  <div id="modal1" class="modal modal-fixed-footer scrollspy"></div>
-  <!-- END MODAL1 STRUCTURE -->
 
-  <!-- MODAL2 STRUCTURE -->
-  <div id="modal2" class="modal modal-fixed-footer scrollspy">
-    <div id="firebaseui-auth-container"></div>
-    <div id="loader">Loading...</div>
-  </div>
-  <!-- END MODAL2 STRUCTURE -->
+<!-- MODAL1 STRUCTURE -->
+<div id="modal1" class="modal modal-fixed-footer scrollspy"></div>
+<!-- END MODAL1 STRUCTURE -->
+
+<!-- MODAL2 STRUCTURE -->
+<div id="modal2" class="modal modal-fixed-footer scrollspy">
+  <div id="firebaseui-auth-container"></div>
+  <div id="loader">Loading...</div>
+</div>
+<!-- END MODAL2 STRUCTURE -->
 
   
 
