@@ -15,3 +15,7 @@ $('.modal').modal({
   $(document).ready(function(){
     $('.scrollspy').scrollSpy();
   });
+
+
+  $('#star-btn').on("click", function (event) {
+  });
