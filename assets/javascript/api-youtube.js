@@ -357,27 +357,27 @@ $(document).ready(function () {
   });
 
 
-    $.ajax({
-      url: uTellyURL + queryShowTitle,
-      method: "GET",
-      headers: {
-        'X-Mashape-Key': uTellyKey,
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      }
-    }).then(function (response) {
-      console.log(response);
-      if (response.results.length > 0){
-      $(divId).append("<p>Available on: </p>");      
-      for (var i = 0; i < response.results[0].locations.length; i++) {
-        var streamIcon = `
-        <img class = "responsive-img stream-icon" src="${response.results[0].locations[i].icon}">`;
-        $(divId).append(streamIcon);
-      }
+  $.ajax({
+    url: uTellyURL + queryShowTitle,
+    method: "GET",
+    headers: {
+      'X-Mashape-Key': uTellyKey,
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
     }
-    if (response.results.length === 0) {
-      $(divId).append("<p>Unfortunately, this isn't available on any streaming platforms at this time. </p>");
+  }).then(function (response) {
+    console.log(response);
+    if (response.results.length > 0){
+    $(divId).append("<p>Available on: </p>");      
+    for (var i = 0; i < response.results[0].locations.length; i++) {
+      var streamIcon = `
+      <img class = "responsive-img stream-icon" src="${response.results[0].locations[i].icon}">`;
+      $(divId).append(streamIcon);
     }
+  }
+  if (response.results.length === 0) {
+    $(divId).append("<p>Unfortunately, this isn't available on any streaming platforms at this time. </p>");
+  }
 
-    });
   });
+});
