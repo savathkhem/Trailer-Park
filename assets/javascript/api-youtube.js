@@ -49,6 +49,7 @@ $(document).ready(function () {
           <div class="card">
             <div class="card-image waves-effect waves-block waves-light">
               <img class="modal-trigger movie-poster" data-title = "${response.results[i].title}" src="${posterPath}" href="#modal1">
+              <a href="http://www.google.com" style="position:absolute;right:5px;bottom:5px" class="star-btn btn-floating yellow darken-1"><i class="material-icons">star_border</i></a>
             </div>
             <div class="card-content">
               <span class="card-title activator grey-text text-darken-4">
@@ -100,6 +101,7 @@ $(document).ready(function () {
         <div class="card">
           <div class="card-image waves-effect waves-block waves-light">
             <img class="modal-trigger movie-poster" data-title = "${response.results[i].title}" src="${posterPath}" href="#modal1">
+            <a href="http://www.google.com" style="position:absolute;right:5px;bottom:5px" class="star-btn btn-floating yellow darken-1"><i class="material-icons">star_border</i></a>      
           </div>
           <div class="card-content">
             <span class="card-title activator grey-text text-darken-4">
@@ -143,6 +145,7 @@ $(document).ready(function () {
             <div class="card">
               <div class="card-image waves-effect waves-block waves-light">
                 <img class="modal-trigger movie-poster" data-title = "${response.results[i].name}" src="${posterPath}" href="#modal1">
+                <a href="http://www.google.com" style="position:absolute;right:5px;bottom:5px" class="star-btn btn-floating yellow darken-1"><i class="material-icons">star_border</i></a>
               </div>
               <div class="card-content">
                 <span class="card-title activator grey-text text-darken-4">
@@ -256,6 +259,7 @@ $(document).ready(function () {
             <div class="card">
               <div class="card-image waves-effect waves-block waves-light">
                 <img class="modal-trigger movie-poster" data-title = "${response.results[i].title}" src="${posterPath}" href="#modal1">
+                <a href="http://www.google.com" style="position:absolute;right:5px;bottom:5px" class="star-btn btn-floating yellow darken-1"><i class="material-icons">star_border</i></a>
               </div>
               <div class="card-content">
                 <span class="card-title activator grey-text text-darken-4">
@@ -296,6 +300,7 @@ $(document).ready(function () {
             <div class="card">
               <div class="card-image waves-effect waves-block waves-light">
                 <img class="modal-trigger movie-poster" data-title = "${response.results[i].name}" src="${posterPath}" href="#modal1">
+                <a href="http://www.google.com" style="position:absolute;right:5px;bottom:5px" class="star-btn btn-floating yellow darken-1"><i class="material-icons">star_border</i></a>
               </div>
               <div class="card-content">
                 <span class="card-title activator grey-text text-darken-4">
