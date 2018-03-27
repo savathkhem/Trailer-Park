@@ -73,6 +73,7 @@ $(document).ready(function () {
     });
   });
 
+
   $(document).on("click", "#maps", function () {
     $("#modal1").empty();
     $("#modal1").html(googleMaps);
@@ -338,26 +339,27 @@ $(document).ready(function () {
       $(divId).append("<p>Unfortunately, this isn't available on any streaming platforms at this time. </p>");
     }
   });
+
 });
+// END DOCUMENT.READY
 
 
-// STARRED FUNCTION
-var movieKey = "";
-var starredMovies = [];
+  // STARRED FUNCTION
+  // var movieKey = "";
+  // var starredMovies = [];
 
-movieKey = response.results.id;
+  // movieKey = response.results.id;
 
-// Capture Button Click
-$(".star-btn").on("click", function(event) {
-  movieKey.push().setValue(starredMovies);
-  console.log("clicked the star")
-  event.preventDefault();
-  
-  // Code for "Setting values in the database"
-  database.ref().set({
-    starredMovies: starredMovies,
+  // STAR CLICK
+  $(document).on("click", '.star-btn', function () {
+    console.log("mmMMMmm... Star Button....  Clicking...  You Are...")
+    // movieKey.push().setValue(starredMovies);
+    // event.preventDefault();
+    
+    // // CODE FOR SETTING VALUE TO FIREBASE"
+    // database.ref().set({
+    //   starredMovies: starredMovies,
+    // });
   });
-
-});
-// END STARRED
+  // END STARRED FUNCTION
 
