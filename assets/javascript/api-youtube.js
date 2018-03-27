@@ -9,17 +9,17 @@ $(document).ready(function () {
 
   var googleMaps = `<iframe width="700" height="550" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBCEE2nzor1sZUz0mC6-wKUXjQEEdEORbU&q=Movie+theaters+near+me" allowfullscreen></iframe>`;
 
-  uTellyKey = "QnaLbSwHjRmsh0e5QANPxCLNN3wPp16dkM2jsnqXMkveQwmkxF"
+  var uTellyKey = "QnaLbSwHjRmsh0e5QANPxCLNN3wPp16dkM2jsnqXMkveQwmkxF";
 
-  var tmdbApiKey = 'api_key=0c9ebd7d6e76fc10f179166f9acd0665'
+  var tmdbApiKey = 'api_key=0c9ebd7d6e76fc10f179166f9acd0665';
 
-  var tmdbImgUrl = 'https://image.tmdb.org/t/p/w185'
+  var tmdbImgUrl = 'https://image.tmdb.org/t/p/w185';
 
   var topTvURL = "https://api.themoviedb.org/3/tv/popular?api_key=0c9ebd7d6e76fc10f179166f9acd0665&language=en-US";
 
   var moviesURL = "https://api.themoviedb.org/3/movie/now_playing?api_key=0c9ebd7d6e76fc10f179166f9acd0665&language=en-US&page=1";
 
-  var topMoviesUrl = "https://api.themoviedb.org/3/discover/movie?api_key=0c9ebd7d6e76fc10f179166f9acd0665&language=en-US&region=us&vote_count.gte=5000&sort_by=vote_average.desc&include_adult=false&include_video=false&page=1"
+  var topMoviesUrl = "https://api.themoviedb.org/3/discover/movie?api_key=0c9ebd7d6e76fc10f179166f9acd0665&language=en-US&region=us&vote_count.gte=5000&sort_by=vote_average.desc&include_adult=false&include_video=false&page=1";
 
   var uTellyURL = "https://utelly-tv-shows-and-movies-availability-v1.p.mashape.com/lookup?&country=us&term=";
 
@@ -29,7 +29,7 @@ $(document).ready(function () {
 
   //In Theaters Now
   $("#test1").on("click", function () {
-    console.log('clicked!')
+    console.log('clicked!');
     $("#videos-display").empty();
     var tmdbApiKey = 'api_key=0c9ebd7d6e76fc10f179166f9acd0665';
     var tmdbImgUrl = 'https://image.tmdb.org/t/p/w185';
@@ -60,28 +60,27 @@ $(document).ready(function () {
               </span>
             </div>
             <div id = "${response.results[i].title}" class="card-reveal">
-                <span class="card-title grey-text text-darken-4">${response.results[i].title}<i class="material-icons right">close</i></span>
-                <p>${response.results[i].overview}</p>
-                <br>
-                <a id="maps" class="btn modal-trigger waves-effect waves-light" href="#modal1">Theaters Nearby</a>
+              <span class="card-title grey-text text-darken-4">${response.results[i].title}<i class="material-icons right">close</i></span>
+              <p>${response.results[i].overview}</p>
+              <br>
+              <a id="maps" class="btn modal-trigger waves-effect waves-light" href="#modal1">Theaters Nearby</a>
             </div>
           </div>
         </div>`;
-
-        $("#maps").on("click", function () {
-          $("#modal1").empty();
-          $("#modal1").html(googleMaps);
-        });
-
 
         $("#videos-display").append(posterImg);
       }
     });
   });
 
+  $(document).on("click", "#maps", function () {
+    $("#modal1").empty();
+    $("#modal1").html(googleMaps);
+  });
+
   //Top Movies
   $("#test2").on("click", function () {
-    console.log('test2clicked!')
+    console.log('test2clicked!');
     $("#videos-display").empty();
     var tmdbApiKey = 'api_key=0c9ebd7d6e76fc10f179166f9acd0665';
     var tmdbImgUrl = 'https://image.tmdb.org/t/p/w185';
@@ -112,23 +111,23 @@ $(document).ready(function () {
             </span>
           </div>
           <div id = "${response.results[i].title}" class="card-reveal">
-              <span class="card-title grey-text text-darken-4">${response.results[i].title}<i class="material-icons right">close</i></span>
-              <p>${response.results[i].overview}</p>
-              <br>
-              <a data-title = "${response.results[i].title}" class="btn waves-effect waves-light streamable">Can I stream this?</a>
-              <div id = "streaming-services-${response.results[i].title}"></div>
+            <span class="card-title grey-text text-darken-4">${response.results[i].title}<i class="material-icons right">close</i></span>
+            <p>${response.results[i].overview}</p>
+            <br>
+            <a data-title = "${response.results[i].title}" class="btn waves-effect waves-light streamable">Can I stream this?</a>
+            <div id = "streaming-services-${response.results[i].title}"></div>
           </div>
         </div>
       </div>`;
 
-        $("#videos-display").append(posterImg)
+        $("#videos-display").append(posterImg);
       }
     });
   });
 
   //Popular on TV
   $("#test3").on("click", function () {
-    console.log('test3 clicked!')
+    console.log('test3 clicked!');
     $("#videos-display").empty();
     //Populates TV shows on screen
     $.ajax({
@@ -136,9 +135,9 @@ $(document).ready(function () {
       method: "GET"
     }).then(function (response) {
       console.log(response);
-      console.log(response.results[0].poster_path)
+      console.log(response.results[0].poster_path);
       for (var i = 0; i < response.results.length; i++) {
-        console.log(response.results[i].title)
+        console.log(response.results[i].title);
         var posterPath = tmdbImgUrl + response.results[i].poster_path;
         var posterImg = `
           <div class="poster-container">
@@ -152,25 +151,23 @@ $(document).ready(function () {
                   <div id="modal-btn-container">
                   <a id="modal-btn" class="waves-effect waves-light btn modal-trigger" href="#modal1">${response.results[i].name}</a>
                   <i id="more-vert-btn" class="material-icons right">more_vert</i>
-                  </div>
-                </span>
-              </div>
-              <div id = "${response.results[i].name}" class="card-reveal">
-                  <span class="card-title grey-text text-darken-4">${response.results[i].name}<i class="material-icons right">close</i></span>
-                  <p>${response.results[i].overview}</p>
-                  <br>
-                  <a data-title = "${response.results[i].name}" class="btn waves-effect waves-light streamable">Can I stream this?</a>
-                  <div id = "streaming-services-${response.results[i].name}"></div>
-              </div>
+                </div>
+              </span>
             </div>
-          </div>`;
+            <div id = "${response.results[i].name}" class="card-reveal">
+              <span class="card-title grey-text text-darken-4">${response.results[i].name}<i class="material-icons right">close</i></span>
+              <p>${response.results[i].overview}</p>
+              <br>
+              <a data-title = "${response.results[i].name}" class="btn waves-effect waves-light streamable">Can I stream this?</a>
+              <div id = "streaming-services-${response.results[i].name}"></div>
+            </div>
+          </div>
+        </div>`;
 
-        $("#videos-display").append(posterImg)
+        $("#videos-display").append(posterImg);
       }
-    })
-  })
-
-
+    });
+  });
 
   //Click a poster, get the trailers in a modal!
   $(document).on("click", '.movie-poster', function () {
@@ -202,10 +199,9 @@ $(document).ready(function () {
     var unparsedTitle = $(this).data('title');
     var parsedShowTitle = unparsedTitle.replace(/\s/g, "+");
     var queryShowTitle = parsedShowTitle.toLowerCase();
-    var divId = document.getElementById('streaming-services-' + unparsedTitle)
+    var divId = document.getElementById('streaming-services-' + unparsedTitle);
     $(divId).empty();
     $(divId).append('<p>Loading...<p>');
-
     $.ajax({
       url: uTellyURL + queryShowTitle,
       method: "GET",
@@ -215,22 +211,22 @@ $(document).ready(function () {
         'Content-Type': 'application/json'
       }
     }).then(function (response) {
-      console.log(response)
+      console.log(response);
       $(divId).empty();
       if (response.results.length > 0) {
-        $(divId).append("<p>Available on: </p>")
+        $(divId).append("<p>Available on: </p>");
         for (var i = 0; i < response.results[0].locations.length; i++) {
           var streamIcon = `
-        <img class = "responsive-img stream-icon" src="${response.results[0].locations[i].icon}">`
-          $(divId).append(streamIcon)
+          <img class = "responsive-img stream-icon" src="${response.results[0].locations[i].icon}">`;
+          $(divId).append(streamIcon);
         }
-        $('.card-reveal').animate({ scrollTop: $('.card-reveal').height() + $('.card-reveal').height() }, 500)
+        $('.card-reveal').animate({ scrollTop: $('.card-reveal').height() + $('.card-reveal').height() }, 500);
       }
       if (response.results.length === 0) {
-        $(divId).html("<p>Unfortunately, this isn't available on any streaming platforms at this time. </p>")
-        $('.card-reveal').animate({ scrollTop: $('.card-reveal').height() + $('.card-reveal').height() }, 500)
+        $(divId).html("<p>Unfortunately, this isn't available on any streaming platforms at this time. </p>");
+        $('.card-reveal').animate({ scrollTop: $('.card-reveal').height() + $('.card-reveal').height() }, 500);
       }
-    })
+    });
   });
 
   //Search button functionality
@@ -247,12 +243,12 @@ $(document).ready(function () {
       method: "GET"
     }).then(function (response) {
       console.log(response);
-      console.log(response.results[0].poster_path)
+      console.log(response.results[0].poster_path);
       for (var i = 0; i < response.results.length; i++) {
-        console.log(response.results[i].title)
+        console.log(response.results[i].title);
         var posterPath = tmdbImgUrl + response.results[i].poster_path;
-        if (posterPath.includes('null')===true){
-          posterPath = "assets/images/bg1.png";
+        if (posterPath.includes('null') === true){
+          posterPath = "assets/images/placeholder.jpg";
         }
         var posterImg = `
           <div class="poster-container">
@@ -270,30 +266,26 @@ $(document).ready(function () {
                 </span>
               </div>
               <div id = "${response.results[i].title}" class="card-reveal">
-                  <span class="card-title grey-text text-darken-4">${response.results[i].title}<i class="material-icons right">close</i></span>
-                  <p>${response.results[i].overview}</p>
-                  <br>
-                  <a data-title = "${response.results[i].title}" class="btn waves-effect waves-light streamable">Can I stream this?</a>
-                  <div id = "streaming-services-${response.results[i].title}"></div>
+                <span class="card-title grey-text text-darken-4">${response.results[i].title}<i class="material-icons right">close</i></span>
+                <p>${response.results[i].overview}</p>
+                <br>
+                <a data-title = "${response.results[i].title}" class="btn waves-effect waves-light streamable">Can I stream this?</a>
+                <div id = "streaming-services-${response.results[i].title}"></div>
               </div>
             </div>
           </div>`;
 
-
-       
-        $("#videos-display").append(posterImg)
-
+        $("#videos-display").append(posterImg);
       }
-
-    })
+    });
     $.ajax({
       url: searchTvUrl + querySearch,
       method: "GET"
     }).then(function (response) {
       console.log(response);
-      console.log(response.results[0].poster_path)
+      console.log(response.results[0].poster_path);
       for (var i = 0; i < response.results.length; i++) {
-        console.log(response.results[i].name)
+        console.log(response.results[i].name);
         var posterPath = tmdbImgUrl + response.results[i].poster_path;
         var posterImg = `
           <div class="poster-container">
@@ -311,21 +303,42 @@ $(document).ready(function () {
                 </span>
               </div>
               <div id = "${response.results[i].name}" class="card-reveal">
-                  <span class="card-title grey-text text-darken-4">${response.results[i].name}<i class="material-icons right">close</i></span>
-                  <p>${response.results[i].overview}</p>
-                  <br>
-                  <a data-title = "${response.results[i].name}" class="btn waves-effect waves-light streamable">Can I stream this?</a>
-                  <div id = "streaming-services-${response.results[i].name}"></div>
+                <span class="card-title grey-text text-darken-4">${response.results[i].name}<i class="material-icons right">close</i></span>
+                <p>${response.results[i].overview}</p>
+                <br>
+                <a data-title = "${response.results[i].name}" class="btn waves-effect waves-light streamable">Can I stream this?</a>
+                <div id = "streaming-services-${response.results[i].name}"></div>
               </div>
-            </div>
-          </div>`;
+            </div>`;
 
         $("#videos-display").append(posterImg);
       }
-
-    })
-
+    });
   });
+
+  $.ajax({
+    url: uTellyURL + queryShowTitle,
+    method: "GET",
+    headers: {
+      'X-Mashape-Key': uTellyKey,
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    }
+  }).then(function (response) {
+    console.log(response);
+    if (response.results.length > 0){
+    $(divId).append("<p>Available on: </p>");      
+    for (var i = 0; i < response.results[0].locations.length; i++) {
+      var streamIcon = `
+      <img class = "responsive-img stream-icon" src="${response.results[0].locations[i].icon}">`;
+      $(divId).append(streamIcon);
+    }
+    }
+    if (response.results.length === 0) {
+      $(divId).append("<p>Unfortunately, this isn't available on any streaming platforms at this time. </p>");
+    }
+  });
+});
 
 
 // STARRED FUNCTION
