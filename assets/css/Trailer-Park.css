@@ -11,6 +11,12 @@ body {
     height: 400px;
 } */
 
+#btn-area {
+    padding-left: 6px;
+    padding-right: 6px;
+}
+
+
 .container {
     width: 85%;
 }
@@ -140,10 +146,6 @@ p:hover .star-btn{
 
 .fixed-action-btn {
     height: 20px;
-}
-
-hotpink {
-    background-color: #FF1177;
 }
 
 .btn:focus, .btn-large:focus, .btn-small:focus,
