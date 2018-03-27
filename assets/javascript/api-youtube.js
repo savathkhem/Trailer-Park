@@ -361,8 +361,3 @@ $(".star-btn").on("click", function(event) {
 });
 // END STARRED
 
-
-
-
-});
-
