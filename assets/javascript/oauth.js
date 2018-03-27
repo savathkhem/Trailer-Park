@@ -1,13 +1,16 @@
-    // Initialize Firebase
-    var config = {
-      apiKey: "AIzaSyCHDk62ibv6RkEW0AP2CJdxPMTdQocgnCk",
-      authDomain: "trailerpark-trai-1521756731455.firebaseapp.com",
-      databaseURL: "https://trailerpark-trai-1521756731455.firebaseio.com",
-      projectId: "trailerpark-trai-1521756731455",
-      storageBucket: "trailerpark-trai-1521756731455.appspot.com",
-      messagingSenderId: "184928832461"
-    };
-    firebase.initializeApp(config);
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCHDk62ibv6RkEW0AP2CJdxPMTdQocgnCk",
+    authDomain: "trailerpark-trai-1521756731455.firebaseapp.com",
+    databaseURL: "https://trailerpark-trai-1521756731455.firebaseio.com",
+    projectId: "trailerpark-trai-1521756731455",
+    storageBucket: "trailerpark-trai-1521756731455.appspot.com",
+    messagingSenderId: "184928832461"
+  };
+  firebase.initializeApp(config);
+
+   // Create a variable to reference the database.
+   var database = firebase.database();
 
 
   // Initialize the FirebaseUI Widget using Firebase.
@@ -55,3 +58,5 @@ function signOut() {
     console.log('User signed out.');
   });
 }
+
+

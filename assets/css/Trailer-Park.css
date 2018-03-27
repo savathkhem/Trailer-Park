@@ -41,6 +41,7 @@ body {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    width: -webkit-fill-available;
 }
 
 .poster-container{
@@ -88,6 +89,10 @@ body {
     -moz-animation: neon1 .25s ease-in-out infinite alternate;
     animation: neon1 .25s ease-in-out infinite alternate; */
   }
+
+  .fixed-action-btn {
+      height:60px;
+  }
    
   .btn:hover {
     background-color: #fff;
@@ -132,22 +137,11 @@ body {
     visibility:hidden;
 }
 
-/* .star-btn:hover {
-    visibility: visible;
-} */
-
-    
-/* .poster-container:hover + .star-btn {
-    visibility: hidden;
-} */
-
-/* p .test img {
-    visibility: hidden;
-} */
-
-/* p:hover .star-btn{
-    visibility: visible;
-} */
+.star-btn {
+    position:absolute;
+    right:5px;
+    bottom:5px
+}
 
 p:hover .star-btn{
     visibility: visible;
@@ -155,4 +149,12 @@ p:hover .star-btn{
 
 .card-image:hover .star-btn{
     visibility: visible;
+}
+
+.poster-container {
+    min-width: 165px;
+    min-height: 275px;
+    /* width:165px;
+    height:275; */
+    margin:15px;
 }
